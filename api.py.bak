@@ -1,0 +1,11 @@
+import requests
+
+response = requests.get('https://chain.so/api/v2/get_info/DOGE')
+
+if response.status_code == 200:
+    # everything went swimmingly
+    # parse the response as JSON
+    content = response.json()
+
+    print "Name:", content['data']['name']
+    print "Total Blocks:", content['data']['blocks']
